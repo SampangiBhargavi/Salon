@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | LuxeGlow</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-stars"></i>
+            LuxeGlow
+        </a>
+
+        <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="stylists.html">
+                        Stylists
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pricing.html">
+                        Pricing
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">
+                        Offers
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- HEADER -->
+
+<section class="py-5 text-center"
+         style="background:#f7ead7;">
+
+    <div class="container">
+
+        <p class="text-uppercase fw-bold"
+           style="color:#c18b2f;">
+            LuxeGlow Salon
+        </p>
+
+        <h1 class="fw-bold">
+            Book Your Appointment
+        </h1>
+
+        <p class="text-muted">
+            Choose your service, stylist, date and time.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card border-0 shadow rounded-4">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <h3 class="fw-bold mb-4">
+                            Appointment Details
+                        </h3>
+
+
+                        <form id="appointmentForm">
+
+
+                            <!-- NAME -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Full Name
+                                </label>
+
+                                <input
+                                type="text"
+                                id="customerName"
+                                class="form-control form-control-lg"
+                                placeholder="Enter your name"
+                                required>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input
+                                type="email"
+                                id="customerEmail"
+                                class="form-control form-control-lg"
+                                placeholder="Enter your email"
+                                required>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                type="tel"
+                                id="customerPhone"
+                                class="form-control form-control-lg"
+                                placeholder="Enter phone number"
+                                required>
+
+                            </div>
+
+
+                            <!-- SERVICE -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Select Service
+                                </label>
+
+                                <select
+                                id="service"
+                                class="form-select form-select-lg"
+                                required>
+
+                                    <option value="">
+                                        Choose a service
+                                    </option>
+
+                                    <option value="Haircut & Styling">
+                                        Haircut & Styling - ₹499
+                                    </option>
+
+                                    <option value="Hair Spa">
+                                        Hair Spa - ₹999
+                                    </option>
+
+                                    <option value="Facial">
+                                        Facial - ₹799
+                                    </option>
+
+                                    <option value="Party Makeup">
+                                        Party Makeup - ₹1,499
+                                    </option>
+
+                                    <option value="Manicure">
+                                        Manicure - ₹599
+                                    </option>
+
+                                    <option value="Pedicure">
+                                        Pedicure - ₹699
+                                    </option>
+
+                                    <option value="Bridal Makeup">
+                                        Bridal Makeup - ₹4,999
+                                    </option>
+
+                                    <option value="Waxing">
+                                        Waxing - ₹399
+                                    </option>
+
+                                    <option value="Nail Art">
+                                        Nail Art - ₹899
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- STYLIST -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Select Stylist
+                                </label>
+
+                                <select
+                                id="stylist"
+                                class="form-select form-select-lg"
+                                required>
+
+                                    <option value="">
+                                        Choose a stylist
+                                    </option>
+
+                                    <option value="Ananya Sharma">
+                                        Ananya Sharma
+                                    </option>
+
+                                    <option value="Meera Kapoor">
+                                        Meera Kapoor
+                                    </option>
+
+                                    <option value="Riya Sharma">
+                                        Riya Sharma
+                                    </option>
+
+                                    <option value="Sneha Rao">
+                                        Sneha Rao
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <!-- DATE -->
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Appointment Date
+                                    </label>
+
+                                    <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    class="form-control form-control-lg"
+                                    required>
+
+                                </div>
+
+
+                                <!-- TIME -->
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Time Slot
+                                    </label>
+
+                                    <select
+                                    id="appointmentTime"
+                                    class="form-select form-select-lg"
+                                    required>
+
+                                        <option value="">
+                                            Select time
+                                        </option>
+
+                                        <option>
+                                            10:00 AM
+                                        </option>
+
+                                        <option>
+                                            11:00 AM
+                                        </option>
+
+                                        <option>
+                                            12:00 PM
+                                        </option>
+
+                                        <option>
+                                            01:00 PM
+                                        </option>
+
+                                        <option>
+                                            02:00 PM
+                                        </option>
+
+                                        <option>
+                                            03:00 PM
+                                        </option>
+
+                                        <option>
+                                            04:00 PM
+                                        </option>
+
+                                        <option>
+                                            05:00 PM
+                                        </option>
+
+                                        <option>
+                                            06:00 PM
+                                        </option>
+
+                                        <option>
+                                            07:00 PM
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- NOTES -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+                                    Additional Notes
+                                </label>
+
+                                <textarea
+                                id="notes"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Any special request?"></textarea>
+
+                            </div>
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                            type="submit"
+                            class="btn btn-gold btn-lg w-100">
+
+                                <i class="bi bi-calendar-check"></i>
+
+                                Confirm Appointment
+
+                            </button>
+
+                        </form>
+
+
+                        <!-- SUCCESS -->
+
+                        <div id="successMessage"
+                             class="alert alert-success mt-4 d-none">
+
+                            <h5>
+                                <i class="bi bi-check-circle"></i>
+                                Appointment Booked!
+                            </h5>
+
+                            <p class="mb-0">
+                                Your appointment has been submitted
+                                successfully.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="pt-5 pb-3">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <h5>LuxeGlow Salon & Spa</h5>
+
+            <p>
+                Hyderabad, Telangana |
+                +91 98765 43210
+            </p>
+
+            <hr>
+
+            <small>
+                © 2026 LuxeGlow Salon & Spa.
+                All Rights Reserved.
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const appointment = {
+
+        id: Date.now(),
+
+        name: document
+        .getElementById("customerName")
+        .value,
+
+        email: document
+        .getElementById("customerEmail")
+        .value,
+
+        phone: document
+        .getElementById("customerPhone")
+        .value,
+
+        service: document
+        .getElementById("service")
+        .value,
+
+        stylist: document
+        .getElementById("stylist")
+        .value,
+
+        date: document
+        .getElementById("appointmentDate")
+        .value,
+
+        time: document
+        .getElementById("appointmentTime")
+        .value,
+
+        notes: document
+        .getElementById("notes")
+        .value,
+
+        status: "Pending"
+
+    };
+
+
+    let appointments =
+        JSON.parse(
+            localStorage.getItem("appointments")
+        ) || [];
+
+
+    appointments.push(appointment);
+
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+
+    document
+    .getElementById("successMessage")
+    .classList.remove("d-none");
+
+
+    document
+    .getElementById("appointmentForm")
+    .reset();
+
+});
+
+</script>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

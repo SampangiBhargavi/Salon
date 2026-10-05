@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | LuxeGlow</title>
+
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+<div class="container">
+
+<a class="navbar-brand fw-bold fs-4" href="#">
+<i class="bi bi-stars"></i> LuxeGlow Admin
+</a>
+
+<button class="btn btn-outline-light" onclick="logout()">
+<i class="bi bi-box-arrow-right"></i> Logout
+</button>
+
+</div>
+</nav>
+
+
+<div class="container py-5">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+<div>
+<h1 class="fw-bold">Admin Dashboard</h1>
+<p class="text-muted">Manage your salon operations</p>
+</div>
+</div>
+
+
+<!-- Statistics -->
+
+<div class="row g-4 mb-5">
+
+<div class="col-md-3">
+<div class="card border-0 shadow-sm p-4 text-center">
+<i class="bi bi-calendar-check fs-1 text-warning"></i>
+<h2 id="appointmentCount">0</h2>
+<p class="text-muted mb-0">Appointments</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card border-0 shadow-sm p-4 text-center">
+<i class="bi bi-people fs-1 text-warning"></i>
+<h2 id="userCount">0</h2>
+<p class="text-muted mb-0">Customers</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card border-0 shadow-sm p-4 text-center">
+<i class="bi bi-star fs-1 text-warning"></i>
+<h2 id="reviewCount">0</h2>
+<p class="text-muted mb-0">Reviews</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card border-0 shadow-sm p-4 text-center">
+<i class="bi bi-envelope fs-1 text-warning"></i>
+<h2 id="messageCount">0</h2>
+<p class="text-muted mb-0">Messages</p>
+</div>
+</div>
+
+</div>
+
+
+<!-- Management -->
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-calendar-event fs-1 text-warning"></i>
+<h4 class="mt-3">Appointments</h4>
+<p class="text-muted">View and manage customer appointments.</p>
+<a href="#appointments" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-people fs-1 text-warning"></i>
+<h4 class="mt-3">Customers</h4>
+<p class="text-muted">View registered customers.</p>
+<a href="#customers" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-star fs-1 text-warning"></i>
+<h4 class="mt-3">Reviews</h4>
+<p class="text-muted">Approve or delete customer reviews.</p>
+<a href="#reviews" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-person-badge fs-1 text-warning"></i>
+<h4 class="mt-3">Stylists</h4>
+<p class="text-muted">Manage salon stylists.</p>
+<a href="#stylists" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-tags fs-1 text-warning"></i>
+<h4 class="mt-3">Offers</h4>
+<p class="text-muted">Manage promotional offers.</p>
+<a href="#offers" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card border-0 shadow-sm h-100 p-4">
+<i class="bi bi-envelope fs-1 text-warning"></i>
+<h4 class="mt-3">Messages</h4>
+<p class="text-muted">View contact messages.</p>
+<a href="#messages" class="btn btn-dark">Manage</a>
+</div>
+</div>
+
+</div>
+
+
+<!-- Appointments -->
+
+<section id="appointments" class="mt-5">
+
+<h2 class="fw-bold mb-3">Appointments</h2>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+<tr>
+<th>Name</th>
+<th>Service</th>
+<th>Stylist</th>
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="appointmentTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- Customers -->
+
+<section id="customers" class="mt-5">
+
+<h2 class="fw-bold mb-3">Customers</h2>
+
+<div class="table-responsive">
+
+<table class="table table-bordered">
+
+<thead class="table-dark">
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Membership</th>
+</tr>
+</thead>
+
+<tbody id="customerTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- Reviews -->
+
+<section id="reviews" class="mt-5">
+
+<h2 class="fw-bold mb-3">Reviews</h2>
+
+<div id="reviewTable"></div>
+
+</section>
+
+
+<!-- Messages -->
+
+<section id="messages" class="mt-5 mb-5">
+
+<h2 class="fw-bold mb-3">Contact Messages</h2>
+
+<div id="messageTable"></div>
+
+</section>
+
+</div>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script>
+
+/* Check Admin */
+
+if (localStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+}
+
+
+/* Load Data */
+
+function loadDashboard() {
+
+    const appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+
+    const users =
+        JSON.parse(localStorage.getItem("users")) || [];
+
+    const reviews =
+        JSON.parse(localStorage.getItem("reviews")) || [];
+
+    const messages =
+        JSON.parse(localStorage.getItem("messages")) || [];
+
+
+    document.getElementById("appointmentCount").innerText =
+        appointments.length;
+
+    document.getElementById("userCount").innerText =
+        users.length;
+
+    document.getElementById("reviewCount").innerText =
+        reviews.length;
+
+    document.getElementById("messageCount").innerText =
+        messages.length;
+
+
+    /* Appointments */
+
+    const appointmentTable =
+        document.getElementById("appointmentTable");
+
+    appointmentTable.innerHTML = "";
+
+    appointments.forEach((a, index) => {
+
+        appointmentTable.innerHTML += `
+
+        <tr>
+
+        <td>${a.name}</td>
+
+        <td>${a.service}</td>
+
+        <td>${a.stylist}</td>
+
+        <td>${a.date}</td>
+
+        <td>${a.time}</td>
+
+        <td>
+        <span class="badge bg-warning text-dark">
+        ${a.status}
+        </span>
+        </td>
+
+        <td>
+
+        <button class="btn btn-sm btn-success"
+        onclick="approveAppointment(${index})">
+        Approve
+        </button>
+
+        <button class="btn btn-sm btn-danger"
+        onclick="deleteAppointment(${index})">
+        Delete
+        </button>
+
+        </td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    /* Customers */
+
+    const customerTable =
+        document.getElementById("customerTable");
+
+    customerTable.innerHTML = "";
+
+    users.forEach(user => {
+
+        customerTable.innerHTML += `
+
+        <tr>
+
+        <td>${user.name}</td>
+
+        <td>${user.email}</td>
+
+        <td>${user.phone}</td>
+
+        <td>${user.membership || "None"}</td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    /* Reviews */
+
+    const reviewTable =
+        document.getElementById("reviewTable");
+
+    reviewTable.innerHTML = "";
+
+    reviews.forEach((review, index) => {
+
+        reviewTable.innerHTML += `
+
+        <div class="card border-0 shadow-sm p-3 mb-3">
+
+        <div class="d-flex justify-content-between">
+
+        <div>
+
+        <h5>${review.name}</h5>
+
+        <p class="text-warning mb-1">
+        ${"★".repeat(Number(review.rating))}
+        </p>
+
+        <p>${review.review}</p>
+
+        </div>
+
+        <button
+        class="btn btn-danger btn-sm"
+        onclick="deleteReview(${index})">
+
+        Delete
+
+        </button>
+
+        </div>
+
+        </div>
+
+        `;
+
+    });
+
+
+    /* Messages */
+
+    const messageTable =
+        document.getElementById("messageTable");
+
+    messageTable.innerHTML = "";
+
+    messages.forEach(message => {
+
+        messageTable.innerHTML += `
+
+        <div class="card border-0 shadow-sm p-4 mb-3">
+
+        <h5>${message.subject}</h5>
+
+        <p>
+        <strong>${message.name}</strong>
+        |
+        ${message.email}
+        |
+        ${message.phone}
+        </p>
+
+        <p>${message.message}</p>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* Approve Appointment */
+
+function approveAppointment(index) {
+
+    let appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+
+    appointments[index].status = "Approved";
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+    loadDashboard();
+}
+
+
+/* Delete Appointment */
+
+function deleteAppointment(index) {
+
+    if (!confirm("Delete this appointment?")) {
+        return;
+    }
+
+    let appointments =
+        JSON.parse(localStorage.getItem("appointments")) || [];
+
+    appointments.splice(index, 1);
+
+    localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+    );
+
+    loadDashboard();
+}
+
+
+/* Delete Review */
+
+function deleteReview(index) {
+
+    if (!confirm("Delete this review?")) {
+        return;
+    }
+
+    let reviews =
+        JSON.parse(localStorage.getItem("reviews")) || [];
+
+    reviews.splice(index, 1);
+
+    localStorage.setItem(
+        "reviews",
+        JSON.stringify(reviews)
+    );
+
+    loadDashboard();
+}
+
+
+/* Logout */
+
+function logout() {
+
+    localStorage.removeItem("adminLoggedIn");
+
+    window.location.href =
+        "admin-login.html";
+}
+
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>

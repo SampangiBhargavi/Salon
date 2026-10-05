@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | LuxeGlow Salon & Spa</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-4" href="index.html">
+            <i class="bi bi-stars"></i>
+            LuxeGlow
+        </a>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="stylists.html">
+                        Stylists
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pricing.html">
+                        Pricing
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="offers.html">
+                        Offers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- Login Section -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-6 col-lg-5">
+
+
+                <div class="card border-0 shadow-lg rounded-4 p-4">
+
+
+                    <!-- Heading -->
+
+                    <div class="text-center mb-4">
+
+                        <div class="icon-box mx-auto mb-3">
+
+                            <i class="bi bi-person fs-3"></i>
+
+                        </div>
+
+                        <h2 class="fw-bold">
+                            Welcome Back
+                        </h2>
+
+                        <p class="text-muted">
+                            Login to your LuxeGlow account
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Login Form -->
+
+                    <form id="loginForm">
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input type="email"
+                                   id="loginEmail"
+                                   class="form-control"
+                                   placeholder="Enter your email"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input type="password"
+                                   id="loginPassword"
+                                   class="form-control"
+                                   placeholder="Enter your password"
+                                   required>
+
+                        </div>
+
+
+
+                        <div id="loginError"
+                             class="alert alert-danger d-none">
+
+                            Invalid email or password.
+
+                        </div>
+
+
+
+                        <button type="submit"
+                                class="btn btn-gold w-100">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                            Login
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- Register -->
+
+                    <div class="text-center mt-4">
+
+                        <p class="text-muted mb-2">
+                            Don't have an account?
+                        </p>
+
+                        <button class="btn btn-outline-dark"
+                                data-bs-toggle="modal"
+                                data-bs-target="#registerModal">
+
+                            Create Account
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Register Modal -->
+
+<div class="modal fade"
+     id="registerModal"
+     tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    Create LuxeGlow Account
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <form id="registerForm">
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               id="registerName"
+                               class="form-control"
+                               placeholder="Enter your name"
+                               required>
+
+                    </div>
+
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input type="email"
+                               id="registerEmail"
+                               class="form-control"
+                               placeholder="Enter your email"
+                               required>
+
+                    </div>
+
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Phone Number
+                        </label>
+
+                        <input type="tel"
+                               id="registerPhone"
+                               class="form-control"
+                               placeholder="Enter phone number"
+                               required>
+
+                    </div>
+
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input type="password"
+                               id="registerPassword"
+                               class="form-control"
+                               placeholder="Create password"
+                               required>
+
+                    </div>
+
+
+
+                    <div id="registerError"
+                         class="alert alert-danger d-none">
+                    </div>
+
+
+                    <div id="registerSuccess"
+                         class="alert alert-success d-none">
+                    </div>
+
+
+
+                    <button type="submit"
+                            class="btn btn-gold w-100">
+
+                        Create Account
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- Footer -->
+
+<footer class="py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-5 mb-4">
+
+                <h4>
+                    LuxeGlow Salon & Spa
+                </h4>
+
+                <p>
+                    Your destination for luxury beauty and wellness.
+                </p>
+
+                <i class="bi bi-instagram me-3"></i>
+
+                <i class="bi bi-facebook me-3"></i>
+
+                <i class="bi bi-youtube me-3"></i>
+
+            </div>
+
+
+
+            <div class="col-md-3 mb-4">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a href="index.html">
+                    Home
+                </a>
+                <br>
+
+                <a href="services.html">
+                    Services
+                </a>
+                <br>
+
+                <a href="pricing.html">
+                    Pricing
+                </a>
+                <br>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p>
+                    <i class="bi bi-geo-alt"></i>
+                    Hyderabad, Telangana
+                </p>
+
+                <p>
+                    <i class="bi bi-telephone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope"></i>
+                    info@luxeglow.com
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="text-center mb-0">
+
+            © 2026 LuxeGlow Salon & Spa.
+            All Rights Reserved.
+
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+
+<script>
+
+/* =========================
+   REGISTER USER
+========================= */
+
+document.getElementById("registerForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("registerName").value;
+
+    const email =
+        document.getElementById("registerEmail").value;
+
+    const phone =
+        document.getElementById("registerPhone").value;
+
+    const password =
+        document.getElementById("registerPassword").value;
+
+
+    let users =
+        JSON.parse(localStorage.getItem("users")) || [];
+
+
+    /* Check existing email */
+
+    const existingUser =
+        users.find(user => user.email === email);
+
+
+    if (existingUser) {
+
+        const error =
+            document.getElementById("registerError");
+
+        error.innerText =
+            "An account with this email already exists.";
+
+        error.classList.remove("d-none");
+
+        return;
+
+    }
+
+
+    /* Create user */
+
+    const newUser = {
+
+        id: Date.now(),
+
+        name: name,
+
+        email: email,
+
+        phone: phone,
+
+        password: password,
+
+        membership: null
+
+    };
+
+
+    users.push(newUser);
+
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+
+    /* Success message */
+
+    const success =
+        document.getElementById("registerSuccess");
+
+    success.innerText =
+        "Account created successfully! You can now login.";
+
+    success.classList.remove("d-none");
+
+
+    document.getElementById("registerError")
+        .classList.add("d-none");
+
+
+    document.getElementById("registerForm")
+        .reset();
+
+});
+
+
+
+/* =========================
+   LOGIN USER
+========================= */
+
+document.getElementById("loginForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document.getElementById("loginEmail").value;
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+
+    let users =
+        JSON.parse(localStorage.getItem("users")) || [];
+
+
+    const user =
+        users.find(
+            user =>
+            user.email === email &&
+            user.password === password
+        );
+
+
+    if (!user) {
+
+        document.getElementById("loginError")
+            .classList.remove("d-none");
+
+        return;
+
+    }
+
+
+    /* Save logged-in user */
+
+    localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify(user)
+    );
+
+
+    /* Redirect */
+
+    window.location.href =
+        "index.html";
+
+});
+
+</script>
+
+
+</body>
+</html>

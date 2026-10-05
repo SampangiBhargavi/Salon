@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | LuxeGlow</title>
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-4"
+           href="index.html">
+
+            <i class="bi bi-stars"></i>
+            LuxeGlow
+
+        </a>
+
+        <a href="index.html"
+           class="btn btn-outline-light">
+
+            <i class="bi bi-house"></i>
+            Home
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- Admin Login -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <div class="card border-0 shadow-lg rounded-4 p-4">
+
+
+                    <!-- Icon -->
+
+                    <div class="text-center mb-4">
+
+                        <div class="icon-box mx-auto mb-3">
+
+                            <i class="bi bi-shield-lock fs-3"></i>
+
+                        </div>
+
+                        <h2 class="fw-bold">
+                            Admin Login
+                        </h2>
+
+                        <p class="text-muted">
+                            LuxeGlow Management Panel
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Login Form -->
+
+                    <form id="adminLoginForm">
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Admin Email
+                            </label>
+
+                            <input type="email"
+                                   id="adminEmail"
+                                   class="form-control"
+                                   placeholder="Enter admin email"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input type="password"
+                                   id="adminPassword"
+                                   class="form-control"
+                                   placeholder="Enter password"
+                                   required>
+
+                        </div>
+
+
+
+                        <div id="adminError"
+                             class="alert alert-danger d-none">
+
+                            Invalid admin email or password.
+
+                        </div>
+
+
+
+                        <button type="submit"
+                                class="btn btn-gold w-100">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                            Login as Admin
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- Demo Credentials -->
+
+                    <div class="alert alert-light border mt-4">
+
+                        <h6 class="fw-bold">
+                            Demo Admin Credentials
+                        </h6>
+
+                        <p class="mb-1">
+                            <strong>Email:</strong>
+                            admin@luxeglow.com
+                        </p>
+
+                        <p class="mb-0">
+                            <strong>Password:</strong>
+                            admin123
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Footer -->
+
+<footer class="py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-5 mb-4">
+
+                <h4>
+                    LuxeGlow Salon & Spa
+                </h4>
+
+                <p>
+                    Your destination for luxury beauty and wellness.
+                </p>
+
+                <i class="bi bi-instagram me-3"></i>
+
+                <i class="bi bi-facebook me-3"></i>
+
+                <i class="bi bi-youtube me-3"></i>
+
+            </div>
+
+
+            <div class="col-md-3 mb-4">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a href="index.html">
+                    Home
+                </a>
+                <br>
+
+                <a href="services.html">
+                    Services
+                </a>
+                <br>
+
+                <a href="pricing.html">
+                    Pricing
+                </a>
+                <br>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p>
+                    <i class="bi bi-geo-alt"></i>
+                    Hyderabad, Telangana
+                </p>
+
+                <p>
+                    <i class="bi bi-telephone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope"></i>
+                    info@luxeglow.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="text-center mb-0">
+
+            © 2026 LuxeGlow Salon & Spa.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+<script>
+
+/* Admin Login */
+
+document.getElementById("adminLoginForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document.getElementById("adminEmail").value;
+
+    const password =
+        document.getElementById("adminPassword").value;
+
+
+    /* Demo admin credentials */
+
+    if (
+        email === "admin@luxeglow.com" &&
+        password === "admin123"
+    ) {
+
+
+        /* Save admin login */
+
+        localStorage.setItem(
+            "adminLoggedIn",
+            "true"
+        );
+
+
+        /* Redirect to dashboard */
+
+        window.location.href =
+            "admin.html";
+
+
+    } else {
+
+
+        document.getElementById("adminError")
+            .classList.remove("d-none");
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>
